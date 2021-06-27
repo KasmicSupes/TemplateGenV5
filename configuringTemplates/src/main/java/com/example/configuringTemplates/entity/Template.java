@@ -15,16 +15,31 @@ import javax.persistence.UniqueConstraint;
 
 
 @Entity
-@Table(uniqueConstraints={@UniqueConstraint(columnNames = {"organisationid","type"})})
+@Table(uniqueConstraints={@UniqueConstraint(columnNames = {"organisationid","type","language"})})
 public class Template {
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private Integer id;
-	
-    private String organisationid;
+    private Integer organisationId;
     private String type;
 	private String content;
+	private String subject;
+	private String language;
+	
+	public String getLanguage() {
+		return language;
+	}
+	public void setLanguage(String language) {
+		this.language = language;
+	}
+	public String getSubject() {
+		return subject;
+	}
+	public void setSubject(String subject) {
+		this.subject = subject;
+	}
+
 	private ArrayList<String> placeholders;
 	public Integer getId() {
 		return id;
@@ -33,12 +48,12 @@ public class Template {
 		this.id = id;
 		return this;
 	}
-	public String getOrganisationid() {
-		return organisationid;
+	
+	public Integer getOrganisationId() {
+		return organisationId;
 	}
-	public Template setOrganisationid(String organisationid) {
-		this.organisationid = organisationid;
-		return this;
+	public void setOrganisationId(Integer organisationId) {
+		this.organisationId = organisationId;
 	}
 	public String getType() {
 		return type;
