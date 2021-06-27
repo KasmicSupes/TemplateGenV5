@@ -1,4 +1,4 @@
-package com.example.configuringTemplates.controller;
+package com.example.configuringTemplates.exception;
 
 import java.util.Date;
 
